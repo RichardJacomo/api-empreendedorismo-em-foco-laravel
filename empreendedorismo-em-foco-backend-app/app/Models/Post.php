@@ -12,6 +12,7 @@ class Post extends Model
         'title',
         'text',
         'category',
+        'idUrl',
         'link1',
         'link2',
         'link3',

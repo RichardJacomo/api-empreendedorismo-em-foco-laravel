@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('text');
             $table->string('category');
+            $table->string('idUrl')->nullable()->default(null);
             $table->string('link1')->nullable()->default(null);
             $table->string('link2')->nullable()->default(null);
             $table->string('link3')->nullable()->default(null);

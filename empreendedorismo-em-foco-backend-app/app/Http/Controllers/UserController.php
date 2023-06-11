@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\UserResource;
+use App\Http\Validators\ValidateUserPostData;
 use App\Models\User;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -21,7 +25,12 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = ValidateUserPostData::validate($request);
+        if($validate instanceof JsonResponse){
+            return $validate;
+        }
+        $user = User::create($validate);
+        return new UserResource($user);
     }
 
     /**

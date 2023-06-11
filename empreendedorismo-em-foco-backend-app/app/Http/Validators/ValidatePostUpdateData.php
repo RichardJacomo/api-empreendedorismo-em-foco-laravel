@@ -13,6 +13,7 @@ class ValidatePostUpdateData
             'title' => 'nullable|string|max:255',
             'text' => 'nullable|string',
             'category' => 'nullable|string|max:255',
+            'idUrl' => 'nullable|string|max:255',
             'link1' => 'nullable|url|max:255',
             'link2' => 'nullable|url|max:255',
             'link3' => 'nullable|url|max:255',
